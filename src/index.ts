@@ -11,10 +11,12 @@ const members: MemberType[] = [
     {
         id: 'iwj33j',
         name: 'Robert Hammerschmidt',
+        age: 55,
     },
     {
         id: 'daj23m',
         name: 'Angela Wasserturm',
+        age: 34,
     },
 ]
 
