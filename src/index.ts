@@ -22,6 +22,10 @@ app.get('/members', (req, res) => {
     res.json(members)
 })
 
+app.post('/members', (req, res) => {
+    res.status(201).json(req.body)
+})
+
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)
 })

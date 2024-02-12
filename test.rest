@@ -1,0 +1,15 @@
+ @url = http://localhost:3311
+ 
+### GET ALL MEMBERS
+GET {{url}}/members
+
+### POST 
+
+# Request
+POST {{url}}/members
+Content-Type: application/json
+
+{
+    "id": "3",
+    "name": "John Doe",
+}
