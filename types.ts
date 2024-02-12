@@ -1,4 +1,4 @@
 export type MemberType = {
-    id: number
+    id: string
     name: string
 }

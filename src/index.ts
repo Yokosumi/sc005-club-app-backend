@@ -9,11 +9,11 @@ app.use(cors())
 
 const members: MemberType[] = [
     {
-        id: 1,
+        id: 'iwj33j',
         name: 'Robert Hammerschmidt',
     },
     {
-        id: 2,
+        id: 'daj23m',
         name: 'Angela Wasserturm',
     },
 ]
