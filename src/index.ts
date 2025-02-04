@@ -31,6 +31,10 @@ app.post('/members', (req, res) => {
     if (!newMember.id || !newMember.name || typeof newMember.age !== 'number') {
         return res.status(400).json({error: 'Invalid member data'})
     }
+    const duplicateMember = members.find(member => member.id === newMember.id)
+    if (duplicateMember) {
+        return res.status(409).json({ error: 'Member with this ID already exists'})
+    }
     members.push(newMember)
     res.status(201).json(req.body)
 })
