@@ -39,6 +39,19 @@ app.post('/members', (req, res) => {
     res.status(201).json(req.body)
 })
 
+app.delete('/members', (req, res) => {
+    const { id } = req.body
+    if (!id) {
+        return res.status(400).json({ error: 'ID is required' })
+    }
+    const memberIndex = members.findIndex(member => member.id === id)
+    if (memberIndex === -1) {
+        return res.status(404).json({ error: 'Member not found' })
+    }
+    members.splice(memberIndex, 1)
+    res.status(200).json({ message: 'Member deleted successfully' })
+})
+
 
 
 app.listen(port, () => {

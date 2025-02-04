@@ -14,3 +14,13 @@ Content-Type: application/json
     "name": "John Doe",
     "age": 22
 }
+
+### DELETE MEMBER BY ID
+
+DELETE {{url}}/members
+Content-Type: application/json
+
+{
+    "id": "323dha"
+}
+
