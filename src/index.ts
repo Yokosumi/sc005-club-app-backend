@@ -1,4 +1,5 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import cors from 'cors'
 import { MemberType } from '../types'
 
@@ -6,6 +7,7 @@ const app = express()
 const port = 3311
 
 app.use(cors())
+app.use(bodyParser.json())
 
 const members: MemberType[] = [
     {
@@ -25,8 +27,15 @@ app.get('/members', (req, res) => {
 })
 
 app.post('/members', (req, res) => {
+    const newMember: MemberType = req.body
+    if (!newMember.id || !newMember.name || typeof newMember.age !== 'number') {
+        return res.status(400).json({error: 'Invalid member data'})
+    }
+    members.push(newMember)
     res.status(201).json(req.body)
 })
+
+
 
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)

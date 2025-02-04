@@ -10,6 +10,7 @@ POST {{url}}/members
 Content-Type: application/json
 
 {
-    "id": "3",
+    "id": "323dha",
     "name": "John Doe",
+    "age": 22
 }
